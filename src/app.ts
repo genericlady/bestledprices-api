@@ -8,8 +8,6 @@ import { Browser, Page } from "puppeteer";
 const app = express()
 const port = 3000
 const host = "https://www.adafruit.com";
-const url = `${host}/?q=foo&sort=BestMatch`
-
 const allowedOrigins = ["http://localhost:3001"];
 
 const options: cors.CorsOptions = {
@@ -17,9 +15,6 @@ const options: cors.CorsOptions = {
 };
 
 app.use(cors(options)); /* NEW */
-
-// app.use(express.json());
-
 
 interface Image {
   src: string,
@@ -42,6 +37,10 @@ interface Product {
 }
 
 app.get("/search/:q", (req: Request, res: Response) => {
+  // TODO: need to add validations for the query
+  
+  const query = encodeURI(req.params?.q);
+  const url = `${host}/?q=${query}&sort=BestMatch`;
   puppeteer
     .launch()
     .then(function(browser: Browser) {
