@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "engines": {
-    "node": ">=14.17.0"
+    "node": ">=14.17.0 <15"
   },
   "scripts": {
     "build": "tsc",
