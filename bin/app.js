@@ -15,7 +15,7 @@ var options = {
     origin: allowedOrigins
 };
 app.use(cors_1.default(options)); /* NEW */
-app.get("/search/:q", function (req, res) {
+app.get("/", function (req, res) {
     return res.json({ code: 200, msg: "ok" });
 });
 app.get("/search/:q", function (req, res) {
