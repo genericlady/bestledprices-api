@@ -36,7 +36,7 @@ interface Product {
   merchant: string,
 }
 
-app.get("/search/:q", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
   return res.json({ code: 200, msg: "ok" });
 });
 
