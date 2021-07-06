@@ -16,6 +16,9 @@ var options = {
 };
 app.use(cors_1.default(options)); /* NEW */
 app.get("/search/:q", function (req, res) {
+    return res.json({ code: 200, msg: "ok" });
+});
+app.get("/search/:q", function (req, res) {
     // TODO: need to add validations for the query
     var _a;
     var query = encodeURI((_a = req.params) === null || _a === void 0 ? void 0 : _a.q);

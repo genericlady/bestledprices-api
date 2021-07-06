@@ -37,6 +37,10 @@ interface Product {
 }
 
 app.get("/search/:q", (req: Request, res: Response) => {
+  return res.json({ code: 200, msg: "ok" });
+});
+
+app.get("/search/:q", (req: Request, res: Response) => {
   // TODO: need to add validations for the query
   
   const query = encodeURI(req.params?.q);
